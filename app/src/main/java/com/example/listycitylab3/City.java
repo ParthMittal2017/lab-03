@@ -1,4 +1,4 @@
-package com.example.listycitylab3;
+package com.example.listycity;
 import java.io.Serializable;
 
 /*
@@ -9,12 +9,12 @@ import java.io.Serializable;
 public class City implements Serializable {
     private String cityName;
     private String provinceName;
+
     // constructor
     public City(String cName, String prov) {
         this.cityName = cName;
         this.provinceName = prov;
     }
-
     // getters
     public String getName() {
         return cityName;
@@ -22,7 +22,7 @@ public class City implements Serializable {
     public String getProvince() {
         return provinceName;
     }
-    // setters (so we can edit later)
+    // setters so we can edit later
     public void setName(String newName) {
         this.cityName = newName;
     }
