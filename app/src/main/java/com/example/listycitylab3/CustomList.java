@@ -1,14 +1,10 @@
-package com.example.listycitylab3;
-
+package com.example.listycity;
 import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
-import com.example.listycity.R;
-
 import java.util.ArrayList;
 
 /*
@@ -26,11 +22,13 @@ public class CustomList extends ArrayAdapter<City> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View rowView = convertView;
+
         // if row is not recycled yet then inflate it
         if (rowView == null) {
             LayoutInflater inflater = myActivity.getLayoutInflater();
             rowView = inflater.inflate(R.layout.content, null);
         }
+
         // grab the city object at this position
         City thisCity = myCities.get(position);
 
