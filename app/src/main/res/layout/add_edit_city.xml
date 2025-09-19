@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:hint="Enter city"
         android:textSize="15sp"/>
-
     <!-- text box for province or state -->
     <EditText
         android:id="@+id/input_province"
