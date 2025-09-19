@@ -1,4 +1,4 @@
-package com.example.listycitylab3;
+package com.example.listycity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Bundle;
@@ -8,9 +8,6 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
-
-import com.example.listycity.MainActivity;
-import com.example.listycity.R;
 
 public class EditCityFragment extends DialogFragment {
     private City targetCity;     // used if we are editing
@@ -33,6 +30,7 @@ public class EditCityFragment extends DialogFragment {
         frag.setArguments(bundle);
         return frag;
     }
+
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
@@ -47,13 +45,12 @@ public class EditCityFragment extends DialogFragment {
             if (editingMode) {
                 targetCity = (City) getArguments().getSerializable("city");
                 if (targetCity != null) {
-                    // prefill with old values
+                    // pre-fill with old values
                     nameField.setText(targetCity.getName());
                     provinceField.setText(targetCity.getProvince());
                 }
             }
         }
-
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         return builder.setView(root)
                 .setTitle(editingMode ? "Edit City" : "Add City")
